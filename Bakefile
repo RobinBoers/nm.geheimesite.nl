@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+REMOTE=s11
+DOMAIN=nm.geheimesite.nl
+
+DEPLOY="rsync -ciavuP --delete --exclude .git --exclude Bakefile"
+
+deploy() {
+  $DEPLOY ./ $REMOTE:domains/$DOMAIN/public_html
+}
